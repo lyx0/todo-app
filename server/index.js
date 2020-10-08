@@ -48,7 +48,6 @@ app.get("/todos/:id", async (req, res) => {
 });
 
 // Update a Todo
-
 app.put("/todos/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -58,14 +57,13 @@ app.put("/todos/:id", async (req, res) => {
       [description, id]
     );
 
-    res.json("Todo was updated!")
+    res.json("Todo was updated!");
   } catch (err) {
     console.error(err.message);
   }
 });
 
 // Delete a Todo
-
 app.listen(5000, () => {
   console.log("Server has started on Port 5000");
 });
