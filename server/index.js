@@ -7,7 +7,7 @@ const pool = require("./db");
 app.use(cors());
 app.use(express.json());
 
-// Routes
+/** Routes **/
 
 // Create a Todo
 app.post("/todos", async (req, res) => {
@@ -20,7 +20,7 @@ app.post("/todos", async (req, res) => {
 
     res.json(newTodo.rows[0]);
   } catch (err) {
-    console.error(err.message);
+    console.error(err.message); 
   }
 });
 
@@ -33,7 +33,7 @@ app.get("/todos", async (req, res) => {
     console.error(err.message);
   }
 });
-
+ 
 // Get a Todo
 app.get("/todos/:id", async (req, res) => {
   try {
@@ -76,7 +76,7 @@ app.delete("/todos/:id", async (req, res) => {
     console.error(err.message) 
   }
 })
-
+ 
 app.listen(5000, () => {
-  console.log("Server has started on Port 5000");
-});
+  console.log(`Server has started on Port 5000`)
+}); 
